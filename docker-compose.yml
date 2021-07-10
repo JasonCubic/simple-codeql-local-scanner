@@ -1,10 +1,10 @@
 ---
 services:
-  jwt-demo-codeql-scan:
-    container_name: jwt-demo-codeql-scan
+  simple-codeql-local-scanner:
+    container_name: simple-codeql-local-scanner
     image: mcr.microsoft.com/cstsectools/codeql-container:latest
     volumes:
-      - /f/node_sandbox/jwt-demo:/opt/src
+      - /f/node_sandbox/NodeTestBench:/opt/src
       - ./entrypoint.sh:/entrypoint.sh
       - ./codeql-results:/opt/results
     entrypoint: ["bash", "entrypoint.sh"]
